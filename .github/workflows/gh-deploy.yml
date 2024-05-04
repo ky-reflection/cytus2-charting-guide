@@ -1,8 +1,12 @@
 name: ci 
 on:
+  pull_request:
+    branches:
+      - master   
   push:
     branches:
       - master 
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
