@@ -1,5 +1,8 @@
 site_name: CytusⅡ 简明制谱教程
-site_author: KY_Relfection
+site_author: 空吟_Relfection
+repo_name: cytus2-charting-guide
+repo_url: https://github.com/ky-reflection/cytus2-charting-guide
+dev_addr: 127.0.0.1:1274
 theme: 
   name: 'material'
   language: 'zh'
@@ -21,6 +24,7 @@ theme:
     - content.code.annotate  
   icon:
     logo: material/book-education
+    repo: fontawesome/brands/github
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
@@ -68,6 +72,10 @@ markdown_extensions:
 
 extra:
   pagetime: 'on'
+  analytics:
+    provider: google
+    property: G-PCQPP22S9G
+
 nav:
  - '前言': index.md
  - '流程介绍与准备工作': Adagio.md
@@ -76,6 +84,14 @@ plugins:
   # - git-revision-date-localized:
   #     fallback_to_build_date: true
   #     locale: zh
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      locale: zh
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+      count_empty_lines: true
+      fallback_to_empty: false
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
