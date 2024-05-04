@@ -29,7 +29,7 @@
 
 **Cylheim** （从[Microsoft Store](https://www.microsoft.com/zh-cn/p/cylheim/9pcczswg973k)或[Github](https://github.com/Horiztar/Cylheim-Windows/releases)获取，使用方法参见[wiki](https://github.com/Horiztar/Cylheim-Windows/wiki)和[视频教程](https://www.bilibili.com/video/BV1Ly4y1m7Np)）
 
-![image-20230316114102079](Adagio.assets/image-20230316114102079.png)
+![image-20230316114102079](adagio.assets/image-20230316114102079.png)
 
 ## 音频处理
 

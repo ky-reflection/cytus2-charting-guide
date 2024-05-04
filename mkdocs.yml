@@ -3,6 +3,9 @@ site_author: 空吟_Relfection
 repo_name: cytus2-charting-guide
 repo_url: https://github.com/ky-reflection/cytus2-charting-guide
 dev_addr: 127.0.0.1:1274
+nav:
+ - '前言': index.md
+ - '流程介绍与准备工作': adagio.md
 theme: 
   name: 'material'
   language: 'zh'
@@ -76,9 +79,6 @@ extra:
     provider: google
     property: G-PCQPP22S9G
 
-nav:
- - '前言': index.md
- - '流程介绍与准备工作': Adagio.md
 plugins:
   - search
   # - git-revision-date-localized:
