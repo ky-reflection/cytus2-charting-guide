@@ -4,8 +4,15 @@ repo_name: cytus2-charting-guide
 repo_url: https://github.com/ky-reflection/cytus2-charting-guide
 dev_addr: 127.0.0.1:1274
 nav:
- - '前言': index.md
- - '流程介绍与准备工作': adagio.md
+ - '从何处来': index.md
+ - '流程介绍与准备工作': Adagio.md
+ - '谱面的构成': Sostenuto.md
+ - '对音与选轨': Accelerando.md
+ - '键型与局部设计': Stringendo.md
+ - '段落与难度分布': Con-Fuoco-Ma-Non-Troppo.md
+ - '谱面完成之后': A-Tempo.md
+ - '到何处去': Dolce-Lento.md
+ - '使用例': Ad-libitum.md
 theme: 
   name: 'material'
   language: 'zh'
