@@ -18,20 +18,21 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - name: build
-        uses: actions/cache@v2
+      - uses: actions/cache@v2
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install mkdocs
-      - run: pip install mkdocs-material
+      - name: Install dependencies
+        # run: pip install mkdocs
+        run: pip install mkdocs-material
       # - run: pip install mkdocs-blogging-plugin  # 记得安装其他依赖的库
-      - run: mkdocs gh-deploy --force
+      - name: build site
+        run: mkdocs build
         
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
         with:
-          publish_dir: ./ # 部署打包后的 dist 目录
+          publish_dir: ./site # 部署打包后的 dist 目录
           branch: gh-pages
           github_token: ${{ secrets.DEPLOY_SECRET }} # secret 名
           user_name: ${{ secrets.MY_USER_NAME }}
