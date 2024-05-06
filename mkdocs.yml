@@ -1,4 +1,4 @@
-site_name: CytusⅡ 简明制谱教程
+site_name: Cytus II  简明制谱教程
 site_author: 空吟_Relfection
 repo_name: cytus2-charting-guide
 repo_url: https://github.com/ky-reflection/cytus2-charting-guide
@@ -9,7 +9,7 @@ nav:
  - '谱面的构成': Sostenuto.md
  - '对音与选轨': Accelerando.md
  - '键型与局部设计': Stringendo.md
- - '段落与难度分布': Con-Fuoco-Ma-Non-Troppo.md
+ - '段落与密度分布': Con-Fuoco-Ma-Non-Troppo.md
  - '谱面完成之后': A-Tempo.md
  - '到何处去': Dolce-Lento.md
  - '使用例': Ad-libitum.md
