@@ -3,16 +3,6 @@ site_author: 空吟_Relfection
 repo_name: cytus2-charting-guide
 repo_url: https://github.com/ky-reflection/cytus2-charting-guide
 dev_addr: 127.0.0.1:1274
-nav:
- - '从何处来': index.md
- - '流程介绍与准备工作': Adagio.md
- - '谱面的构成': Sostenuto.md
- - '对音与选轨': Accelerando.md
- - '键型与局部设计': Stringendo.md
- - '段落与密度分布': Con-Fuoco-Ma-Non-Troppo.md
- - '谱面完成之后': A-Tempo.md
- - '到何处去': Dolce-Lento.md
- - '使用例': Ad-libitum.md
 theme: 
   name: 'material'
   language: 'zh'
@@ -32,6 +22,7 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate  
+    - navigation.tracking
   icon:
     logo: material/book-education
     repo: fontawesome/brands/github
@@ -87,7 +78,8 @@ extra:
     property: G-PCQPP22S9G
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   # - git-revision-date-localized:
   #     fallback_to_build_date: true
   #     locale: zh
@@ -100,5 +92,16 @@ plugins:
       count_empty_lines: true
       fallback_to_empty: false
 extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  # - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+
+nav:
+ - '前言': index.md
+ - '准备工作': Adagio.md
+ - '新手上路': Sostenuto.md
+ - '对音与选轨': Accelerando.md
+ - '键型与局部设计': Stringendo.md
+ - '段落与密度分布': Con-Fuoco-Ma-Non-Troppo.md
+ - '谱面完成之后': A-Tempo.md
+ - '后记': Dolce-Lento.md
+ - '附录': Ad-libitum.md
