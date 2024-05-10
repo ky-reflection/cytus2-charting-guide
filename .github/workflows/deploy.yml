@@ -34,8 +34,8 @@ jobs:
         env:
             SSH_PRIVATE_KEY: ${{ secrets.KYREFLECTION_MK1_RSA }}
             ARGS: -rltgoDzvO --delete
-            SOURCE: ./site/
+            SOURCE: site/
             REMOTE_HOST: 142.171.104.92
-            REMOTE_USER: ky
+            REMOTE_USER: root
             TARGET: /home/ky/musicgame/cytus2-charting-guide-site
             EXCLUDE: 
