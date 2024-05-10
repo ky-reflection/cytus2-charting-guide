@@ -10,6 +10,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      SSH_PRIVATE_KEY: ${{ secrets.KYREFLECTION_MK1_RSA }}
+      REMOTE_HOST: 142.171.104.92
+      REMOTE_USER: root
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,19 +27,16 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install mkdocs
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-git-revision-date-localized-plugin
-      - run: pip install mkdocs-git-authors-plugin
-      # - run: pip install mkdocs-blogging-plugin
+      - run: pip install -r requirements.txt
       - run: mkdocs build
       - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@main
-        env:
-            SSH_PRIVATE_KEY: ${{ secrets.KYREFLECTION_MK1_RSA }}
-            ARGS: -rltgoDzvO --delete
-            SOURCE: site/
-            REMOTE_HOST: 142.171.104.92
-            REMOTE_USER: root
-            TARGET: /home/ky/musicgame/cytus2-charting-guide-site
-            EXCLUDE: 
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "Removing /var/www/mug/cytus2-charting-guide-site"
+          ssh $REMOTE_USER@$REMOTE_HOST "rm -f /var/www/mug/cytus2-charting-guide-site || echo 'no such directory.'"
+          echo "Creating /var/www/mug/cytus2-charting-guide-site"
+          ssh $REMOTE_USER@$REMOTE_HOST "mkdir -p /var/www/mug/cytus2-charting-guide-site"
+          echo "Copying 'site' directory to /var/www/mug/cytus2-charting-guide-site"
+          scp -r site/* $REMOTE_USER@$REMOTE_HOST:/var/www/mug/cytus2-charting-guide-site/
