@@ -26,7 +26,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: mkdocs build
       - name: Deploy to Server
-        uses: wlixcc/SFTP-Deploy-Action@v1.0 # 这个是sftp插件
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4 # 这个是sftp插件
         with:
           server: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
