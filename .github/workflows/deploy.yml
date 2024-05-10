@@ -1,11 +1,11 @@
-name: ci 
+name: ci
 on:
   pull_request:
     branches:
-      - main   
+      - main
   push:
     branches:
-      - main 
+      - main
   workflow_dispatch:
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:  # mkdocs-blogging-plugin 给出的渲染问题解决方案
+        with: # mkdocs-blogging-plugin 给出的渲染问题解决方案
           fetch-depth: 0
       - uses: actions/setup-python@v2
         with:
@@ -31,6 +31,6 @@ jobs:
           server: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           ssh_private_key: ${{ secrets.KYREFLECTION_MK1_RSA }}
-          local_path: 'site/*'
-          remote_path: '/var/www/mug/cytus2-charting-guide-site'
-
+          local_path: "site/*"
+          remote_path: "/var/www/mug/cytus2-charting-guide-site"
+          delete_remote_files: true
