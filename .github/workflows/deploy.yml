@@ -10,10 +10,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      SSH_PRIVATE_KEY: ${{ secrets.KYREFLECTION_MK1_RSA }}
-      REMOTE_HOST: 142.171.104.92
-      REMOTE_USER: root
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -30,13 +26,11 @@ jobs:
       - run: pip install -r requirements.txt
       - run: mkdocs build
       - name: Deploy to Server
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          echo "Removing /var/www/mug/cytus2-charting-guide-site"
-          ssh $REMOTE_USER@$REMOTE_HOST "rm -f /var/www/mug/cytus2-charting-guide-site || echo 'no such directory.'"
-          echo "Creating /var/www/mug/cytus2-charting-guide-site"
-          ssh $REMOTE_USER@$REMOTE_HOST "mkdir -p /var/www/mug/cytus2-charting-guide-site"
-          echo "Copying 'site' directory to /var/www/mug/cytus2-charting-guide-site"
-          scp -r site/* $REMOTE_USER@$REMOTE_HOST:/var/www/mug/cytus2-charting-guide-site/
+        uses: wlixcc/SFTP-Deploy-Action@v1.0 # 这个是sftp插件
+        with:
+          server: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          ssh_private_key: ${{ secrets.KYREFLECTION_MK1_RSA }}
+          local_path: 'site/*'
+          remote_path: '/var/www/mug/cytus2-charting-guide-site'
+
