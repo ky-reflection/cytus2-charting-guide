@@ -27,6 +27,15 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: pip install mkdocs-git-authors-plugin
-      # - run: pip install mkdocs-blogging-plugin  # 记得安装其他依赖的库
-      - run: mkdocs gh-deploy --force
-        
+      # - run: pip install mkdocs-blogging-plugin
+      - run: mkdocs build
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.KYREFLECTION_MK1_RSA }}
+            ARGS: -rltgoDzvO --delete
+            SOURCE: ./site/
+            REMOTE_HOST: 142.171.104.92
+            REMOTE_USER: ky
+            TARGET: /home/ky/musicgame/cytus2-charting-guide-site
+            EXCLUDE: 
