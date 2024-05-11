@@ -1,15 +1,15 @@
 # 概览：准备工作
 
-## 制谱流程
+## 工作流程
 
-偶遇一首激发了你创作欲的乐曲，到谱面完成、上架[ Cytoid 社区](https://cytoid.io)，有哪些步骤？
+偶遇一首激发了你创作欲的乐曲，到谱面完成、上架 [Cytoid 社区](https://cytoid.io)，有哪些步骤？
 
 - 获取音频，测定 BPM ，处理音频，以得到正确的文件格式和长度。
 - 准备一张合适的曲绘，记录音频和曲绘的 metadata (作者、发布路径等)。
 - 使用制谱器创作谱面。*~~这听起来很轻松~~*
 - 打包和发布谱面。
 
-## 环境
+## 工作环境
 
 在这里，我会列出你可能需要的大部分软件，你需要提前准备好这些软件以及其运行环境，并对软件的使用有一定程度的了解。
 
@@ -17,23 +17,24 @@
 
 我会在附录中举例介绍一些软件的使用方法和注意事项，可供参考。
 
-### 音频处理
+### 音频工具
 
 免费开源的 [Audacity](https://www.audacityteam.org/) 或 Fl Studio、Adobe Audition 等，可以使用[格式工厂](http://www.pcfreetime.com/formatfactory/CN/index.html)辅助格式转换。
 
-### BPM测定
+### BPM工具
 
-[MixMeister BPM Analyzer](https://www.mixmeister.com/bpm-analyzer.html) 或其他可以测定BPM的软件、网站（如 TimingAnlyz、[BPM 查询器](https://vocalremover.org/zh/key-bpm-finder)） 。
+[MixMeister BPM Analyzer](https://www.mixmeister.com/bpm-analyzer.html) 或其他可以测定BPM的软件、网站（如 [TimingAnlyz](https://osu.ppy.sh/users/126198)、[BPM 查询器](https://vocalremover.org/zh/key-bpm-finder)） 。
 
-### 制谱软件
+### 制谱工具
 
 **Cylheim** （从 [Microsoft Store](https://www.microsoft.com/zh-cn/p/cylheim/9pcczswg973k) 或 [Github](https://github.com/Horiztar/Cylheim-Windows/releases) 获取，使用方法参见[wiki](https://github.com/Horiztar/Cylheim-Windows/wiki)和[视频教程](https://www.bilibili.com/video/BV1Ly4y1m7Np)）
 
 ![image-20230316114102079](Adagio.assets/image-20230316114102079.png)
 
-## 音频处理
+## 文件准备
+### 音频处理
 
-### 格式
+#### 格式
 
 获取的音频文件通常为 MP3 或 FLAC 格式，推荐在制作谱面和打包时使用 **OGG** 格式的音频文件。
 
@@ -42,7 +43,7 @@ WAV 格式的音频同样适用于制作谱面，但由于其较高的空间占�
 !!! warning "关于 MP3 格式"
     请注意，MP3 格式的音频文件很可能导致延迟变化，在 Cylheim 和 Cytoid 中的表现不稳定，**请勿使用**。
 
-### BPM
+#### BPM
 
 在 Cytus II 谱面中，速度和乐曲的 BPM（beats per minute）强相关，其值通常为 BPM 的$2^n$​​倍。你可以使用 MixMeister BPM Analyzer 测定乐曲 BPM，也可以通过其他途径寻找参照。某些网站会提供乐曲的 BPM 信息（如 [sdvx.in](https://sdvx.in/) ），还可以通过 BMS 格式的谱面获取 BPM（推荐 [BMS SEARCH](https://bmssearch.net/) 和 [iBMSC](https://www.cs.mcgill.ca/~ryang6/iBMSC/) ）。
 
@@ -66,8 +67,7 @@ WAV 格式的音频同样适用于制作谱面，但由于其较高的空间占�
         - 扫描线速度是对当前线速的直观描述，页长或 BPM 变化都会导致线速变化。将当前的页长视为960Tick，等效的BPM即为我们平时说的线速。
         $$ \frac{\text{960}}{\text{Scanline}}=\frac{\text{Pagesize}}{\text{BPM}}$$
 
-
-### 重拍对齐
+#### 重拍对齐
 
 Cytus II 谱面和乐曲的小节是相关的，页面边缘对应小节线。
 
@@ -76,7 +76,6 @@ Cytus II 谱面和乐曲的小节是相关的，页面边缘对应小节线。
 每一页面的时间为
 $$\frac {120} {\rm Scanline} \rm s
 $$
-
 Scanline 为当前扫描线速度。你需要在音频处理软件中定位第一个重拍的位置，通过在开头增加或减少空白的方式，使得第一个重拍的时间为起始页面时间的整数倍。Cytus II 扫描线出现动画需要一整页来播放，请确保第一个音（或第一个 note）在第二页或之后出现。
 
 - 乐曲的第一个音可能是弱拍，不是完整小节的开始（参阅：[弱起小节](https://zhuanlan.zhihu.com/p/89747708)），你需要向后寻找一个可参考的重拍，可以考虑节奏鲜明的鼓。同理，如果你在乐曲的开头找不到良好的参照，也可以向后寻找重拍。计算时需要留意第一个音的位置。
@@ -91,14 +90,14 @@ Scanline 为当前扫描线速度。你需要在音频处理软件中定位第�
     如果你已经阅读过 Cylheim 的教程，你会意识到 Cylheim 中变拍、半速和倍速都是通过改变页长（Pagesize）实现的。当页长为默认值 960 Tick 时，扫描线速度为当前 BPM 对应的正常值。当页长加倍时，线速减半，而 BPM 不变。如果你的谱面以半速开始，你填入的 Scanline 应该为 BPM 的两倍。
 
     对于并非四拍子的乐曲，以三拍子为例，常用的页长将是 720 Tick 和 1440 Tick 。如果你不能理解先前的线速换算，这里我提供另一个可以使用的算式：
-    $$
+$$
     \frac{60\times拍}{\text{BPM}}秒
     $$
     在重拍前留空这一数值或其整数倍的长度是合适的。
 
 
 
-### 剪歌
+#### 剪歌
 
 音游曲的长度一般介于 90 秒和 180 秒，过长或过短的音频会影响谱面的创作和游玩体验。
 
@@ -108,22 +107,69 @@ Scanline 为当前扫描线速度。你需要在音频处理软件中定位第�
 
 可供参考的实例：Arcaea 对 Tempestissimo 的处理（[cut](https://www.bilibili.com/video/BV1tt4y1C7BG/) / [uncut](https://www.bilibili.com/video/BV1Yy4y1v7jC/)）
 
-### 其他注意事项
+#### 其他注意事项
 
 - 打包发布时需要一段 15 秒左右的预览音频，建议截取较突出的段落，可以加上淡入和淡出。
 - 不是所有的乐曲都适合 Cytus II 谱面的表现形式，请自行甄别。
 - 请避开有版权问题的乐曲，如 Cytus、Cytus II 收录曲、Arcaea 版权曲等。部分曲师不允许使用他们的作品进行自制。如果你已经完成了谱面，请不要在社区公开。
 - [CYTOID BLACKLIST/WHITELIST](https://docs.google.com/spreadsheets/d/1tWktIWXCcCo9_qyo-TJMNVeuYrFFPL71BL0zB5ve-5U/edit#gid=0)
 
-## 曲绘
+### 曲绘
+
 为你的谱面选择一张JPG或PNG格式背景图，推荐 4:3 或 16:9 的长宽比，分辨率适中。图片可以是单曲或专辑的封面，也可以是题材相关的内容（也可以是完全无关的东西）。
 
 请记录画师、曲绘URL等信息，稍后你需要在 metadata 中填写这些信息。
 
-## 开始制谱
+### 文件汇总
 
 检查你的工程文件夹，现在你应该有一份对齐了起拍点、有 BPM 信息的 OGG 格式音频，有一张曲绘，可能有一份预览音频。
 
-你可以进入 Cylheim ，按照教程中介绍的方法创建一个项目，添加一个谱面，填写相关信息。
+你可以进入 Cylheim ，按照教程中介绍的方法创建一个项目，添加一个谱面，填写相关信息。文件准备的讲解到此结束。
 
-文件准备的讲解到此结束，我们可以开始写谱了。
+## 知识准备
+
+### 乐理基础
+
+制谱需要用到一定的乐理知识，一方面，辨识节奏能够显著地提高采音的效率和准确率，另一方面，使用术语有助于沟通。
+
+你需要掌握的乐理知识包括常见的[节拍](https://zh.wikipedia.org/wiki/%E8%8A%82%E6%8B%8D)、[记谱方法](https://zh.wikipedia.org/zh-cn/%E4%BA%94%E7%B7%9A%E8%AD%9C)等。
+
+#### 小节和节拍
+
+在音乐中，节拍指有规律地重复出现的重音。
+
+Cytus II 谱面中的页面和乐曲小节是对应的。在上一节中，我提到了时基 TimeBase 的默认值是 480 Tick，亦即一拍的长度是 480 Tick。
+
+正确辨认乐曲的节拍非常重要，错误的节拍和错误的 BPM 一样致命。
+
+三拍子通常呈现出强弱弱或强弱弱次强弱弱的节奏，相对容易辨认。对于三拍子的乐曲，常用的页长将是 720 Tick 和 1440 Tick 。
+
+![image-20240506194644949](Sostenuto.assets/image-20240506194644949.png)
+
+对于更复杂的节拍，可以观察其重拍、旋律或乐句重复的周期，以此划分小节，根据小节内的拍数确定节拍和对应的页长。实际操作时，可以按照旋律结构或其他依据，将特殊节拍拆解成较短的节拍来调整页长，以适应 Cytus II 的表达方式。一个直观的例子是 [BloodyMare](https://ct2view.the-kitti.com/chartlist/ivy001_009/chaos) 对七拍子的处理。
+
+
+???+ info "X 分音"
+	五线谱中，只有空心符头没有符杆和符尾的音符叫做全音符。
+    
+
+    带有空心符头和符杆的音符叫做二分音符。二分音符的时值为 $1\over2$ 个全音符。
+    
+    带有实心符头和符杆的音符叫做四分音符。四分音符的时值为 $1\over4$​ 个全音符。
+    
+    在此基础上，每增加一根符尾，其时值便缩短一半，其名称亦为对应的X分音符。如八分音符、十六分分音符等。
+    
+    <img src="../Sostenuto.assets/Duple_note_values_comparison.png" alt="img" style="zoom:50% ;" />
+    
+    音游术语中，存在十二分音符、二十四分音符的说法，顾名思义，其时值为 $1\over12$ 或 $1\over24$ 个全音符。
+    
+    需要注意的是，在乐理中是没有“十二分音符”这类说法的，与之对应的是“三连音”。对于其他 X 分音，只要 X 不是 2 的幂，在乐理中对应的都是连音。
+    
+    <img src="../Sostenuto.assets/Irrational_rhythm.png" alt="undefined" style="zoom:50%;" />
+    
+    对于四四拍的乐曲，正常线速下（页长 960 Tick），一个全音符的时值相当于两页。
+    
+    <!-- <img src="../Sostenuto.assets/image-20240506173907287.png" alt="image-20240506173612787" style="zoom:60%;" /> -->
+
+### 谱面基础
+
