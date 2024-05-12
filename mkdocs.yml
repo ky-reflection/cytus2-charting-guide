@@ -3,7 +3,7 @@ site_author: 空吟_Relfection
 repo_name: cytus2-charting-guide
 repo_url: https://github.com/ky-reflection/cytus2-charting-guide
 dev_addr: 127.0.0.1:1274
-copyright: Copyright &copy; 2022 - 2024 空吟_Relfection
+copyright: Copyright &copy; 2022 - 2024 空吟_Reflection
 theme: 
   name: 'material'
   language: 'zh'
