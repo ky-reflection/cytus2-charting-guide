@@ -2,8 +2,9 @@ site_name: Cytus II  简明制谱教程
 site_author: 空吟_Relfection
 repo_name: cytus2-charting-guide
 repo_url: https://github.com/ky-reflection/cytus2-charting-guide
-dev_addr: 127.0.0.1:1274
+dev_addr: 127.0.0.1:1215
 copyright: Copyright &copy; 2022 - 2024 空吟_Reflection
+docs_dir: docs
 theme: 
   name: 'material'
   language: 'zh'
@@ -19,11 +20,13 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: 亮色模式
+        
     
   features:
     - content.code.copy
     - content.code.annotate  
-    - navigation.tracking
+    - navigation.tracking    
+    - navigation.expand # 不折叠左侧nav节点
   icon:
     logo: material/book-education
     repo: fontawesome/brands/github
@@ -54,8 +57,6 @@ markdown_extensions:
       permalink: true
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.betterem:
-      smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
@@ -97,12 +98,17 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
 
 nav:
- - '前言': index.md
- - '准备工作': Adagio.md
- - '新手上路': Sostenuto.md
- - '对音与选轨': Accelerando.md
- - '键型与局部设计': Stringendo.md
- - '段落与密度分布': Con-Fuoco-Ma-Non-Troppo.md
- - '谱面完成之后': A-Tempo.md
- - '后记': Dolce-Lento.md
- - '附录': Ad-libitum.md
+
+  - '前言': index.md
+  - 概览:
+    - '准备工作': Basic\Adagio.md
+    - '背景知识': Basic\Adagietto.md
+  - 新手上路:
+    - '导入': Qualified\Sostenuto.md
+  - 进阶探索:
+    - '对音与选轨': Advanced\Accelerando.md
+    - '键型与局部设计': Advanced\Stringendo.md
+    - '段落与密度分布': Advanced\Con-Fuoco-Ma-Non-Troppo.md
+  - '谱面完成之后': Basic\A-Tempo.md
+  - '后记': Basic\Dolce-Lento.md
+  - '附录': Basic\Ad-libitum.md
