@@ -2,6 +2,15 @@
 
 ---
 
+## 工作流程
+
+偶遇一首激发了你创作欲的音乐，到谱面完成、上架 [Cytoid 社区](https://cytoid.io)，有哪些步骤？
+
+- 获取音频，测定 BPM，处理音频，以得到正确的文件格式和长度。
+- 准备一张合适的曲绘，记录音频和曲绘的 metadata (作者、发布路径等)。
+- 使用制谱器创作谱面。*~~这听起来很轻松~~*
+- 打包和发布谱面。
+
 ## 工作环境
 
 在这里，我会列出你可能需要的大部分软件，你需要提前准备好这些软件以及其运行环境，并对软件的使用有一定程度的了解。
@@ -16,7 +25,7 @@
 
 ### BPM工具
 
-[MixMeister BPM Analyzer](https://www.mixmeister.com/bpm-analyzer.html) 或其他可以测定BPM的软件、网站（如 [TimingAnlyz](https://osu.ppy.sh/users/126198)、[BPM 查询器](https://vocalremover.org/zh/key-bpm-finder)） 。
+[MixMeister BPM Analyzer](https://www.mixmeister.com/bpm-analyzer.html) 或其他可以测定BPM的软件、网站（如 [TimingAnlyz](https://osu.ppy.sh/users/126198)、[BPM 查询器](https://vocalremover.org/zh/key-bpm-finder)）。
 
 ### 制谱工具
 
@@ -48,16 +57,16 @@ WAV 格式的音频同样适用于制作谱面，但由于其较高的空间占�
 !!! info "BPM 及相关概念"
     这里引用了 [Cytus II 谱面格式详解](https://cytoid.wiki/zh/charting/chart-json.html)的部分内容。
     
-    - BPM ：Beats Per Minute，每分钟节拍数。
-    - Tick ：Cytus II 谱面采用的重要单位，用于对元素进行时间定位。
-    - TimeBase ：时基，表示一拍的 Tick 长度，默认为 480 。
+    - BPM：Beats Per Minute，每分钟节拍数。
+    - Tick：Cytus II 谱面采用的重要单位，用于对元素进行时间定位。
+    - TimeBase：时基，表示一拍的 Tick 长度，默认为 480。
         - 显然，你可以由此得出不同节拍音乐需要的页长。
-    - Tempo ：速度，表示一拍的持续时间。Cytus II 谱面中记录当前速度的属性。
+    - Tempo：速度，表示一拍的持续时间。Cytus II 谱面中记录当前速度的属性。
         - Tempo 和 BPM 存在转换关系 
         $$ \text{Tempo}=\frac{60,000,000}{\text{BPM}}$$
         其中 60,000,000 指的是一分钟的微秒数。
-    - Pagesize ：页面长度，表示一页的 Tick 数。
-    - Scanline ：线速，扫描线速度。
+    - Pagesize：页面长度，表示一页的 Tick 数。
+    - Scanline：线速，扫描线速度。
         - 扫描线速度是对当前线速的直观描述，页长或 BPM 变化都会导致线速变化。将当前的页长视为 960 Tick，等效的 BPM 即为我们平时说的线速。
         $$ \frac{\text{960}}{\text{Scanline}}=\frac{\text{Pagesize}}{\text{BPM}}$$
 

@@ -2,15 +2,6 @@
 
 ---
 
-## 流程
-
-偶遇一首激发了你创作欲的音乐，到谱面完成、上架 [Cytoid 社区](https://cytoid.io)，有哪些步骤？
-
-- 获取音频，测定 BPM ，处理音频，以得到正确的文件格式和长度。
-- 准备一张合适的曲绘，记录音频和曲绘的 metadata (作者、发布路径等)。
-- 使用制谱器创作谱面。*~~这听起来很轻松~~*
-- 打包和发布谱面。
-  
 ## 乐理
 
 制谱需要用到一定的乐理知识，一方面，辨识节奏能够显著地提高采音的效率和准确率，另一方面，使用术语有助于沟通。
@@ -62,7 +53,7 @@ Cytus II 谱面中的页面和音乐小节是对应的。在上一节中，我�
 
 <!-- Cytus II 谱面中的 Note 由谱面文件中的 `note_list` 控制，在 Cylheim 中，音符管理统筹了 Note 的 ID、页面、Tick、类型、AR 等属性。 -->
 
-Cytus I 只有 Click，Drag 和 Hold 三种 Note。在一代的基础上，二代添加了 Flick 和 Long Hold，以丰富音色和长音的表现。 Cytus II 2.0 更新加入了 C-Drag，即点锁。
+Cytus I 只有 Click，Drag 和 Hold 三种 Note。在一代的基础上，二代添加了 Flick 和 Long Hold，以丰富音色和长音的表现。Cytus II 2.0 更新加入了 C-Drag，即点锁。
 
 Cylheim 提供了 Down Click 和 Down Drag 两种 Note，在官谱中，这些 Note 仅用于和 Deemo 系列联动的 DREAM 和 DROP 难度谱面中。请不要在常规谱面中使用这些下落式 Note。
 
@@ -90,19 +81,19 @@ Cytus II 谱面对采音的要求是较高的，一般要求 Note 和音乐严�
 ??? info "BPM 及相关概念"
     这里引用了 [Cytus II 谱面格式详解](https://cytoid.wiki/zh/charting/chart-json.html)的部分内容。
     
-    - BPM ：Beats Per Minute，每分钟节拍数。
-    - Tick ：Cytus II 谱面采用的重要单位，用于对元素进行时间定位。
-    - TimeBase ：时基，表示一拍的 Tick 长度，默认为 480。
+    - BPM：Beats Per Minute，每分钟节拍数。
+    - Tick：Cytus II 谱面采用的重要单位，用于对元素进行时间定位。
+    - TimeBase：时基，表示一拍的 Tick 长度，默认为 480。
         - 显然，你可以由此得出不同节拍音乐需要的页长。
-    - Tempo ：速度，表示一拍的持续时间。Cytus II 谱面中记录当前速度的属性。
+    - Tempo：速度，表示一拍的持续时间。Cytus II 谱面中记录当前速度的属性。
         - Tempo 和 BPM 存在转换关系 
         $$ \text{Tempo}=\frac{60,000,000}{\text{BPM}}$$
         其中 60,000,000 指的是一分钟的微秒数。
-    - Pagesize ：页面长度，表示一页的 Tick 数。
-    - Scanline ：线速，扫描线速度。
+    - Pagesize：页面长度，表示一页的 Tick 数。
+    - Scanline：线速，扫描线速度。
         - 扫描线速度是对当前线速的直观描述，页长或 BPM 变化都会导致线速变化。将当前的页长视为 960 Tick，等效的 BPM 即为我们平时说的线速。
         $$ \frac{\text{960}}{\text{Scanline}}=\frac{\text{Pagesize}}{\text{BPM}}$$
-		
+
 Cytus II 中扫描线的行为由页面和速度共同控制。
 
 在 Cylheim 中，页面管理统筹了所有页面的起止 Tick、页面方向、页面参数等属性，速度管理记录了每个速度变化对应的 Tick、Tempo 和 BPM。
@@ -121,8 +112,29 @@ Cytus II 中扫描线的行为由页面和速度共同控制。
   - 任何小于 0 的 Tick。
   - 相邻两页中前一页的结束 Tick 与后一页的起始 Tick 不同。
 
+页面管理有一项“调整谱面长度”的功能，当你由于种种原因发现页面不够用或者过剩的时候（通常是没有正确设置 BPM 的时候），你可以使用它来调整谱面的总长度。
+
 ### 事件
 
 > 对应 Cylheim 侧边栏的事件管理。
 
 事件主要分为三类。
+
+速度变化事件是我们常说的“变速提示”。变速提示的位置是速度变化前的两拍，类型由当前的线速决定，参数由线速和基准线速参考点的差异决定。
+
+不知道变速提示放哪里？没关系，Cylheim 可以一键生成变速提示，并提供了可以调整的参数。
+
+别忘了给你的谱面加上变速提示！
+
+![speed_event](Adagietto.assets/speed_event.jpeg)
+
+UI 事件控制了 Cytus II 游玩界面的一些 UI，具体效果可以参考部分官谱的演出。
+
+需要注意的是，Cytoid 对自动转换的 UI 事件支持较弱，扫描线以外的部分只支持统一的显示和隐藏。
+
+文字提示事件可以在底部显示文字。
+
+!!! warning "滥用警告"
+    不要滥用扫描线和事件的演出，尤其是你还不太清楚怎么提高谱面本身表现力的时候。
+    
+    在本身平平无奇的谱面上使用过头的特效可能会产生浮夸且可笑的效果。

@@ -2,7 +2,7 @@
 
 ---
 
-<img src="index.assets/image-20240504000505583.png" alt="image-20240504000505583" style="zoom:60%;" />
+<img src="resources/starrybot_001.png" alt="image-20240504000505583" style="zoom:60%;" />
 
 感谢 bot 的绝赞复读，就连 bot 也可以熟练使用制谱器完成谱面制作！~~相信大家也可以无师自通，所以教程可以贵阳了~~
 
