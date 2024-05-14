@@ -2,7 +2,7 @@ site_name: Cytus II  简明制谱教程
 site_author: 空吟_Relfection
 repo_name: cytus2-charting-guide
 repo_url: https://github.com/ky-reflection/cytus2-charting-guide
-dev_addr: 127.0.0.1:1215
+dev_addr: 127.0.0.1:19994
 copyright: Copyright &copy; 2022 - 2024 空吟_Reflection
 docs_dir: docs
 theme: 
@@ -26,7 +26,7 @@ theme:
     - content.code.copy
     - content.code.annotate  
     - navigation.tracking    
-    - navigation.expand # 不折叠左侧nav节点
+    - navigation.expand
   icon:
     logo: material/book-education
     repo: fontawesome/brands/github
@@ -82,9 +82,6 @@ extra:
 plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  # - git-revision-date-localized:
-  #     fallback_to_build_date: true
-  #     locale: zh
   - git-revision-date-localized:
       fallback_to_build_date: true
       locale: zh
@@ -104,7 +101,10 @@ nav:
     - '准备工作': Basic/Adagio.md
     - '背景知识': Basic/Adagietto.md
   - 新手上路:
-    - '导入': Qualified/Sostenuto.md
+    - 'Cytus II 谱面初探': Qualified/Sostenuto.md
+    - '采音': Qualified/Sostenuto1.md
+    - '配置': Qualified/Sostenuto2.md
+    - '结构': Qualified/Sostenuto3.md
   - 进阶探索:
     - '对音与选轨': Advanced/Accelerando.md
     - '键型与局部设计': Advanced/Stringendo.md
