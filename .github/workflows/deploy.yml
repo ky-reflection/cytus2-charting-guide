@@ -30,6 +30,7 @@ jobs:
         with:
           server: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
           ssh_private_key: ${{ secrets.KYREFLECTION_MK1_RSA }}
           local_path: "site/*"
           remote_path: "/var/www/mug/cytus2-charting-guide-site"
