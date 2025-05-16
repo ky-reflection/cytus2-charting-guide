@@ -97,15 +97,15 @@ nav:
   - 概览:
       - "准备工作": Basic/Adagio.md
       - "背景知识": Basic/Adagietto.md
-  # - 新手上路:
-  #     - "Cytus II 谱面初探": Qualified/Sostenuto.md
-  #     - "采音": Qualified/Sostenuto1.md
-  #     - "配置": Qualified/Sostenuto2.md
-  #     - "结构": Qualified/Sostenuto3.md
-  # - 进阶探索:
-  #     - "对音与选轨": Advanced/Accelerando.md
-  #     - "键型与局部设计": Advanced/Stringendo.md
-  #     - "段落与密度分布": Advanced/Con-Fuoco-Ma-Non-Troppo.md
-  # - "谱面完成之后": Basic/A-Tempo.md
-  # - "后记": Basic/Dolce-Lento.md
-  # - "附录": Basic/Ad-libitum.md
+  - 新手上路:
+      - "Cytus II 谱面初探": Qualified/Sostenuto.md
+      - "采音": Qualified/Sostenuto1.md
+      - "配置": Qualified/Sostenuto2.md
+      - "结构": Qualified/Sostenuto3.md
+  - 进阶探索:
+      - "对音与选轨": Advanced/Accelerando.md
+      - "键型与局部设计": Advanced/Stringendo.md
+      - "段落与密度分布": Advanced/Con-Fuoco-Ma-Non-Troppo.md
+  - "谱面完成之后": Basic/A-Tempo.md
+  - "后记": Basic/Dolce-Lento.md
+  - "附录": Basic/Ad-libitum.md
