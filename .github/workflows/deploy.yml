@@ -12,14 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4 # 升级到 v4
         with: # mkdocs-blogging-plugin 给出的渲染问题解决方案
           fetch-depth: 0
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v5 # 升级到 v5
         with:
           python-version: 3.x
       - name: build
-        uses: actions/cache@v2
+        uses: actions/cache@v4 # 升级到 v4
         with:
           key: ${{ github.ref }}
           path: .cache
