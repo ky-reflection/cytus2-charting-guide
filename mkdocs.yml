@@ -3,11 +3,11 @@ site_author: 空吟_Reflection
 repo_name: cytus2-charting-guide
 repo_url: https://github.com/ky-reflection/cytus2-charting-guide
 dev_addr: 127.0.0.1:19994
-copyright: Copyright &copy; 2022 - 2024 空吟_Reflection
+copyright: Copyright &copy; 2022 - 2025 空吟_Reflection
 docs_dir: docs
-theme: 
-  name: 'material'
-  language: 'zh'
+theme:
+  name: "material"
+  language: "zh"
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -20,12 +20,11 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: 亮色模式
-        
-    
+
   features:
     - content.code.copy
-    - content.code.annotate  
-    - navigation.tracking    
+    - content.code.annotate
+    - navigation.tracking
     - navigation.expand
   icon:
     logo: material/book-education
@@ -72,9 +71,8 @@ markdown_extensions:
   - tables
   - pymdownx.keys
 
-
 extra:
-  pagetime: 'on'
+  pagetime: "on"
   analytics:
     provider: google
     property: G-PCQPP22S9G
@@ -95,20 +93,19 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
 
 nav:
-
-  - '前言': index.md
+  - "前言": index.md
   - 概览:
-    - '准备工作': Basic/Adagio.md
-    - '背景知识': Basic/Adagietto.md
+      - "准备工作": Basic/Adagio.md
+      - "背景知识": Basic/Adagietto.md
   - 新手上路:
-    - 'Cytus II 谱面初探': Qualified/Sostenuto.md
-    - '采音': Qualified/Sostenuto1.md
-    - '配置': Qualified/Sostenuto2.md
-    - '结构': Qualified/Sostenuto3.md
+      - "Cytus II 谱面初探": Qualified/Sostenuto.md
+      - "采音": Qualified/Sostenuto1.md
+      - "配置": Qualified/Sostenuto2.md
+      - "结构": Qualified/Sostenuto3.md
   - 进阶探索:
-    - '对音与选轨': Advanced/Accelerando.md
-    - '键型与局部设计': Advanced/Stringendo.md
-    - '段落与密度分布': Advanced/Con-Fuoco-Ma-Non-Troppo.md
-  - '谱面完成之后': Basic/A-Tempo.md
-  - '后记': Basic/Dolce-Lento.md
-  - '附录': Basic/Ad-libitum.md
+      - "对音与选轨": Advanced/Accelerando.md
+      - "键型与局部设计": Advanced/Stringendo.md
+      - "段落与密度分布": Advanced/Con-Fuoco-Ma-Non-Troppo.md
+  - "谱面完成之后": Basic/A-Tempo.md
+  - "后记": Basic/Dolce-Lento.md
+  - "附录": Basic/Ad-libitum.md
