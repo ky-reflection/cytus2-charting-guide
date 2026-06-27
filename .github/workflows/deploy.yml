@@ -25,6 +25,8 @@ jobs:
           path: .cache
       - run: pip install -r requirements.txt
       - run: mkdocs build
+        env:
+          NO_MKDOCS_2_WARNING: 1
       - name: Deploy to Server
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4 # 这个是sftp插件
         with:
