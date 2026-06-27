@@ -97,9 +97,9 @@ nav:
   - 概览:
       - "准备工作": Basic/Adagio.md
       - "背景知识": Basic/Adagietto.md
-  # - 新手上路:
-  #     - "Cytus II 谱面初探": Qualified/Sostenuto.md
-  #     - "采音": Qualified/Sostenuto1.md
+  - 新手上路:
+      - "Cytus II 谱面初探": Qualified/Sostenuto.md
+      - "采音": Qualified/Sostenuto1.md
   #     - "配置": Qualified/Sostenuto2.md
   #     - "结构": Qualified/Sostenuto3.md
   # - 进阶探索:
