@@ -36,7 +36,7 @@ Cytus II 谱面中的页面和音乐小节是对应的。在上一节中，我�
     
     值得注意的是，在经典乐理中是没有“十二分音符”这类说法的，与之对应的是“三连音”。对于其他 X 分音，只要 X 不是 2 的幂，在乐理中对应的都是连音。
     
-    不过，说音乐中不存在这样的说法是不准确的，相关讨论见[附录](../Appendix/IrrationalTimeSignatures.md)。
+    不过，说音乐中不存在这样的说法是不准确的，相关讨论见[附录](../Appendix/TwelfthNote.md)。
     
     <img src="../Adagietto.assets/Irrational_rhythm.png" alt="undefined" style="zoom:50%;" />
     
