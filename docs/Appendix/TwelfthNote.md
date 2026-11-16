@@ -41,9 +41,9 @@
 
 ### Cowell 的 New Musical Resources
 
-Henry Cowell 在1930年发布了 New Musical Resources of Music 一书，在书中，考威尔讨论了他在作品中使用的各种创新节奏和和声概念（以及其他仍完全是推测性的概念）。 他谈到了泛音列及“它在音乐历史上所产生的影响，所有时代的许多音乐材料都与之相关，以及通过各种方式以多种不同方式应用其原理，可以组装出丰富的音乐材料调色板。”这本书在随后的几十年里对美国音乐先锋派产生了深远影响。
+Henry Cowell 在1930年发布了 New Musical Resources 一书，在书中，考威尔讨论了他在作品中使用的各种创新节奏和和声概念（以及其他仍完全是推测性的概念）。 他谈到了泛音列及“它在音乐历史上所产生的影响，所有时代的许多音乐材料都与之相关，以及通过各种方式以多种不同方式应用其原理，可以组装出丰富的音乐材料调色板。”这本书在随后的几十年里对美国音乐先锋派产生了深远影响。
 
-他在这本书中论证了节奏与谐波之间的数学对应关系，提出了一大堆很先锋的东西，其中包括本文关心的12分音符。他在作品如 *[Fabric](https://imslp.org/wiki/Fabric,_HC_307_(Cowell,_Henry))*（1917）中实际使用了这些非标准的音符时值，如下图所示，~~符号非常的乱七八糟~~。
+他在这本书中论证了节奏与谐波之间的数学对应关系，提出了一大堆很先锋的东西，其中包括本文关心的12分音符。他在作品如 *[Fabric](https://imslp.org/wiki/Fabric,_HC_307_(Cowell,_Henry))*（1920）中实际使用了这些非标准的音符时值，如下图所示，~~符号非常的乱七八糟~~。
 
 ![image-20250619175749405](./TwelfthNote.assets/image-20250619175749405.png)
 
@@ -57,7 +57,7 @@ Henry Cowell 在1930年发布了 New Musical Resources of Music 一书，在书�
 
 ![image-20250619181153078](./TwelfthNote.assets/image-20250619181153078.png)
 
-### Jason Alde 关于 The Sixth Note的讨论
+### Jason Alder 关于 The Sixth Note 的讨论
 
 在Jason Alder 的博客文章 [The Sixth Note: Dealing with Irrational Time Signatures](https://www.jasonalder.com/blog/2014/06/04/the-sixth-note-dealing-with-irrational-time-signatures/) 中，作者尝试从演奏实践的角度梳理和解构这些非标准拍号的应用。他将这些拍号称作 irrational time signatures，即“无理拍号”。
 
@@ -97,7 +97,7 @@ Wheatley 接着通过分析 Adès 多部作品（如 Traced Overhead, Piano Quin
 
 ---
 
-## 附：fabric全谱
+## 附：Fabric 全谱
 
 ![fabric1](./TwelfthNote.assets/image.png)
 
@@ -110,5 +110,5 @@ Wheatley 接着通过分析 Adès 多部作品（如 Traced Overhead, Piano Quin
 >
 > 1. Faber Music - Thomas Adès: [Traced Overhead](https://www.fabermusic.com/music/traced-overhead-2708/score)
 > 2. Jason Alder - [The Sixth Note: Dealing with Irrational Time Signatures](https://www.jasonalder.com/blog/2014/06/04/the-sixth-note-dealing-with-irrational-time-signatures/)
-> 3. Martineau, Jason. *The Use of Irrational Time Signatures*. (2019)
+> 3. Wheatley, Justeen. [*The Use of Irrational Time Signatures in Thomas Adès’ Works*](https://www.researchgate.net/publication/339182496_The_Use_of_Irrational_Time_Signatures_in_Thomas_Ades'_Works). University of Melbourne (2019).
 > 4. Cowell H. New musical resources[M]. Cambridge University Press, 1996.
