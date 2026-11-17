@@ -27,7 +27,7 @@
 
 ### 制谱工具
 
-**Cylheim** （从 [Microsoft Store](https://www.microsoft.com/zh-cn/p/cylheim/9pcczswg973k) 或 [Github](https://github.com/Horiztar/Cylheim-Windows/releases) 获取，使用方法参见 [wiki](https://github.com/Horiztar/Cylheim-Windows/wiki) 和[视频教程](https://www.bilibili.com/video/BV1Ly4y1m7Np)）
+**Cylheim**（支持 Windows、macOS 与 Linux，从[官方网站](https://cylheim.horiztar.com/)或 [GitHub Releases](https://github.com/Horiztar/Cylheim-Desktop/releases) 获取，[Microsoft Store](https://www.microsoft.com/zh-cn/p/cylheim/9pcczswg973k) 渠道仅有旧版；使用方法参见 [wiki](https://github.com/Horiztar/Cylheim-Windows/wiki) 和[视频教程](https://www.bilibili.com/video/BV1Ly4y1m7Np)；macOS 用户若遇到安全隔离提示，可参考官网提供的终端命令处理）
 
 ![image-20230316114102079](Adagio.assets/image-20230316114102079-1715617193050-1.png)
 
@@ -79,7 +79,7 @@ Scanline 为当前扫描线速度。你需要在音频处理软件中定位第�
 
 - 音乐的第一个音可能是弱拍，不是完整小节的开始（参阅：[弱起小节](https://zhuanlan.zhihu.com/p/89747708)），你需要向后寻找一个可参考的重拍，可以考虑节奏鲜明的鼓。同理，如果你在音乐的开头找不到良好的参照，也可以向后寻找重拍。计算时需要留意第一个音的位置。
 - **不推荐** 调整页长或速度来代替音频处理的做法。
-- Cylheim 自带的延迟调整仅供播放预览使用，不写入谱面属性，使用它来调整延迟会导致最终产出的谱面有严重的延迟问题。
+- Cylheim 播放设置中的“音频校准”仅供播放预览使用，不写入谱面属性，使用它来调整延迟会导致最终产出的谱面有严重的延迟问题。
 - 导出音频时请注意格式。
 - 参考[视频教程](https://www.bilibili.com/video/BV1a94y1L7jn/)
 
@@ -119,18 +119,18 @@ Scanline 为当前扫描线速度。你需要在音频处理软件中定位第�
 
 请记录画师、曲绘URL等信息，稍后你需要在 metadata 中填写这些信息。
 
-现在，检查你的工程文件夹，现在你应该有一份对齐了起拍点、有 BPM 信息的 OGG 格式音频，有一张曲绘，可能有一份预览音频。你可以进入 Cylheim ，按照教程中介绍的方法创建一个项目，添加一个谱面，填写相关信息。你的项目文件结构如下：
+现在，检查你的工程文件夹，现在你应该有一份对齐了起拍点、有 BPM 信息的 OGG 格式音频，有一张曲绘，可能有一份预览音频。你可以进入 Cylheim，按照教程中介绍的方法新建一个项目（建议保存项目时直接以曲名命名 `.cyl` 文件），新建一个谱面并填写相关信息。你的项目文件结构如下：
 
 ```bash
 .
-├─ CylheimProject     // Cylheim 的缓存目录     
-│  ├─ AutoSave        // Cylheim 的自动保存目录
-│  ├─ Backups         // Cylheim 的自动备份目录
-│  └─ MediaTemps      // Cylheim 的音频缓存目录
-├─ CylheimProject.cyl // Cylheim 工程文件（个人推荐将工程文件重命名为曲名）       
-├─ Chaos.json         // 谱面文件               
-├─ bg.png             // 背景图片文件   
-├─ music.ogg          // 音频文件               
-├─ pre.ogg            // 预览文件（可选）               
-└─ ...           
+├─ CylheimProject.cyl.d/     // Cylheim 项目的内部数据目录（名称与 .cyl 文件对应）
+│  ├─ backups/               // 谱面自动保存与手动保存备份目录
+│  ├─ cytoid-export/         // Cytoid 关卡导出配置目录
+│  └─ workspace-tabs.json    // 工作区标签页与时间轴位置记录
+├─ CylheimProject.cyl        // Cylheim 项目文件（若后续重命名，需同步重命名对应的 .cyl.d 目录）
+├─ Chaos.json                // 谱面文件
+├─ bg.png                    // 背景图片文件
+├─ music.ogg                 // 音频文件
+├─ pre.ogg                   // 预览文件（可选）
+└─ ...
 ```
